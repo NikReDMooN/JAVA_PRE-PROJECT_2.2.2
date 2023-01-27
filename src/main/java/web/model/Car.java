@@ -1,4 +1,4 @@
-package Model;
+package web.model;
 
 public class Car {
 
@@ -8,17 +8,6 @@ public class Car {
 
     private String model;
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
 
     private Integer year;
 

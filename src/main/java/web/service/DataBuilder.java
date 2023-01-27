@@ -1,15 +1,19 @@
-package Service;
+package web.service;
 
-import Model.Car;
+import web.model.*;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class getCars {
+@Component
+public class DataBuilder {
 
-    static List<Car> allCars;
+     private List<Car> allCars;
 
-    public static List<Car> get(Integer count) {
+    public DataBuilder() {}
+
+    public List<Car> getCars(Integer count) {
         List<Car> serviceCars = new ArrayList<>();
         allCars = new ArrayList<>();
         allCars.add(new Car("BMV","X1", 1990));
