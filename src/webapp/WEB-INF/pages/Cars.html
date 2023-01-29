@@ -6,21 +6,18 @@
     <title>Title</title>
 </head>
 <body>
-<table border="1" style="width:3500px">
-    <tr>
-        <td>ListOfCars</td>
-    </tr>
-    <th:block th:each="smokeTest : ${tableList}">
+    <table  width="100%" border="1" cellpadding="4" cellspacing="0" >
+        <caption>SEEEE! THIS IS MY CARS</caption>
         <tr>
-            <td th:text="${tableList}"></td>
+            <td>brand</td>
+            <td>model</td>
+            <td>year</td>
         </tr>
-    </th:block>
-</table>
-<div>
-
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
-</div>
+        <tr th:each="car : ${tableList}">
+            <td th:text="${car.brand}"></td>
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.year}"></td>
+        </tr>
+    </table>
 </body>
 </html>

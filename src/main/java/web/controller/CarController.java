@@ -6,7 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import web.model.Car;
-import web.service.DataBuilder;
+import web.service.CarService;
 
 import java.util.List;
 
@@ -16,12 +16,12 @@ public class CarController {
     Integer MAX_CARS = 5;
 
 
-    DataBuilder getCars;
+    CarService carService;
 
 
     @Autowired
-    public void setGetCars(DataBuilder getCars) {
-        this.getCars = getCars;
+    public void setCarService(CarService carService) {
+        this.carService = carService;
     }
 
     @GetMapping(value = "/cars")
@@ -39,10 +39,8 @@ public class CarController {
         }
         System.out.println("count = " + count);
 
-        List<Car> messageCars = getCars.getCars(count);
-
+        List<Car> messageCars = carService.Cars(count);
         map.addAttribute("tableList", messageCars);
-        map.addAttribute("messages", messageCars);
         return "Cars";
     }
 

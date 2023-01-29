@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class DataBuilder {
+public class CarServiceImp implements CarService {
 
      private List<Car> allCars;
 
-    public DataBuilder() {}
+    public CarServiceImp() {}
 
-    public List<Car> getCars(Integer count) {
+    public List<Car> Cars(Integer count) {
         List<Car> serviceCars = new ArrayList<>();
         allCars = new ArrayList<>();
         allCars.add(new Car("BMV","X1", 1990));
